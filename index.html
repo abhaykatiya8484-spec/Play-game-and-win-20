@@ -76,12 +76,6 @@
         </h1>
         <h2 class="text-2xl font-semibold text-gray-400 mb-4">Complete Full Game and Win 20 rupees</h2>
         
-        <div class="my-6">
-            <div class="bg-gray-700 text-gray-500 p-4 rounded-xl border border-dashed border-gray-600">
-                <p class="text-center">Google Ad Placeholder (Top)</p>
-            </div>
-        </div>
-
         <div class="flex items-center justify-center gap-x-8 mb-8 text-2xl font-bold">
             <div class="p-4 bg-gray-700 rounded-xl shadow-inner min-w-[120px]">
                 Score: <span id="score" class="text-yellow-400">0</span>
@@ -91,31 +85,14 @@
             </div>
         </div>
 
-        <div class="my-6">
-            <div class="bg-gray-700 text-gray-500 p-4 rounded-xl border border-dashed border-gray-600">
-                <p class="text-center">Google Ad Placeholder (Middle)</p>
-            </div>
-        </div>
-
         <div id="game-board" class="grid grid-cols-3 gap-6 mb-8 bg-gray-900 p-6 rounded-2xl shadow-inner border border-gray-700">
             </div>
-
-        <div class="my-6">
-            <div class="bg-gray-700 text-gray-500 p-4 rounded-xl border border-dashed border-gray-600">
-                <p class="text-center">Google Ad Placeholder (Bottom)</p>
-            </div>
-        </div>
 
         <div id="message-box" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
             <div class="bg-gray-800 p-8 md:p-12 rounded-3xl shadow-xl text-center w-full max-w-md border border-gray-700">
                 <h2 id="game-status" class="text-4xl font-bold mb-4 text-white">Game Over!</h2>
                 <p class="text-xl text-gray-400 mb-2">Your final score is <span id="final-score" class="font-bold text-yellow-400">0</span>.</p>
                 <p id="prize-message" class="text-xl font-bold text-green-400 mb-4 hidden">You won 20 credits!</p>
-                <div class="my-4">
-                    <div class="bg-gray-700 text-gray-500 p-4 rounded-xl border border-dashed border-gray-600">
-                        <p class="text-center">Google Ad Placeholder (Game Over Screen)</p>
-                    </div>
-                </div>
                 <button id="restart-btn" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors shadow-lg mt-4">
                     Play Again
                 </button>
@@ -126,8 +103,6 @@
             Start Game
         </button>
     </div>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUB_ID" crossorigin="anonymous"></script>
 
     <script>
         const scoreSpan = document.getElementById('score');
