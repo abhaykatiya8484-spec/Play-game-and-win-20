@@ -14,8 +14,8 @@
             background-color: #1a202c; /* Dark background */
         }
         .hole {
-            width: 120px;
-            height: 120px;
+            width: 30vw; /* Changed from 120px */
+            height: 30vw; /* Changed from 120px */
             background-color: #4a5568; /* Greyish color for the holes */
             border-radius: 50%;
             position: relative;
@@ -29,12 +29,12 @@
             transform: scale(1.02);
         }
         .mole {
-            width: 100px;
-            height: 100px;
+            width: 25vw; /* Changed from 100px */
+            height: 25vw; /* Changed from 100px */
             background-color: #f56565; /* Red moles */
             border-radius: 50%;
             position: absolute;
-            bottom: -100px;
+            bottom: -30vw; /* Changed from -100px */
             left: 50%;
             transform: translateX(-50%);
             transition: bottom 0.3s ease-in-out;
@@ -42,7 +42,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .mole.up {
-            bottom: 10px;
+            bottom: 2.5vw; /* Changed from 10px */
             pointer-events: auto;
         }
         .mole.hit {
@@ -64,6 +64,22 @@
         .mole-message.show {
             bottom: 70%;
             opacity: 1;
+        }
+
+        /* Media Query to ensure it looks good on larger screens */
+        @media (min-width: 768px) {
+            .hole {
+                width: 120px;
+                height: 120px;
+            }
+            .mole {
+                width: 100px;
+                height: 100px;
+                bottom: -100px;
+            }
+            .mole.up {
+                bottom: 10px;
+            }
         }
     </style>
 </head>
