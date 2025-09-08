@@ -11,17 +11,17 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background */
+            background-color: #1a202c;
         }
         .hole {
-            width: 30vw; /* Changed from 120px */
-            height: 30vw; /* Changed from 120px */
-            background-color: #4a5568; /* Greyish color for the holes */
+            width: 25vw; /* Adjusted for better mobile fit */
+            height: 25vw; /* Adjusted for better mobile fit */
+            background-color: #4a5568;
             border-radius: 50%;
             position: relative;
             cursor: pointer;
             overflow: hidden;
-            border: 4px solid #2d3748; /* Darker border */
+            border: 4px solid #2d3748;
             box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
             transition: transform 0.1s ease-in-out;
         }
@@ -29,12 +29,12 @@
             transform: scale(1.02);
         }
         .mole {
-            width: 25vw; /* Changed from 100px */
-            height: 25vw; /* Changed from 100px */
-            background-color: #f56565; /* Red moles */
+            width: 20vw; /* Adjusted for better mobile fit */
+            height: 20vw; /* Adjusted for better mobile fit */
+            background-color: #f56565;
             border-radius: 50%;
             position: absolute;
-            bottom: -30vw; /* Changed from -100px */
+            bottom: -20vw; /* Adjusted to match mole height */
             left: 50%;
             transform: translateX(-50%);
             transition: bottom 0.3s ease-in-out;
@@ -42,11 +42,11 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .mole.up {
-            bottom: 2.5vw; /* Changed from 10px */
+            bottom: 2.5vw; /* Adjusted for better mobile fit */
             pointer-events: auto;
         }
         .mole.hit {
-            background-color: #48bb78; /* Green on hit */
+            background-color: #48bb78;
             transform: scale(1.1) translateX(-50%);
             transition: transform 0.1s ease-out, bottom 0.3s ease-in-out;
         }
@@ -66,7 +66,7 @@
             opacity: 1;
         }
 
-        /* Media Query to ensure it looks good on larger screens */
+        /* Media queries for larger screens to maintain original design */
         @media (min-width: 768px) {
             .hole {
                 width: 120px;
@@ -85,37 +85,36 @@
 </head>
 <body class="bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center min-h-screen p-4 text-white">
 
-    <div class="bg-gray-800 p-8 rounded-3xl shadow-2xl max-w-4xl w-full text-center border border-gray-700">
-        
-        <h1 class="text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
-            20 rupee win game 
+    <div class="bg-gray-800 p-4 rounded-3xl shadow-2xl max-w-lg w-full text-center border border-gray-700 mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+            20 rupee win game
         </h1>
-        <h2 class="text-2xl font-semibold text-gray-400 mb-4">Complete Full Game and Win 20 rupees</h2>
+        <h2 class="text-xl sm:text-2xl font-semibold text-gray-400 mb-4">Complete Full Game and Win 20 rupees</h2>
         
-        <div class="flex items-center justify-center gap-x-8 mb-8 text-2xl font-bold">
-            <div class="p-4 bg-gray-700 rounded-xl shadow-inner min-w-[120px]">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-4 text-xl sm:text-2xl font-bold">
+            <div class="p-3 sm:p-4 bg-gray-700 rounded-xl shadow-inner min-w-[120px]">
                 Score: <span id="score" class="text-yellow-400">0</span>
             </div>
-            <div class="p-4 bg-gray-700 rounded-xl shadow-inner min-w-[120px]">
+            <div class="p-3 sm:p-4 bg-gray-700 rounded-xl shadow-inner min-w-[120px]">
                 Time: <span id="time" class="text-red-400">60</span>s
             </div>
         </div>
 
-        <div id="game-board" class="grid grid-cols-3 gap-6 mb-8 bg-gray-900 p-6 rounded-2xl shadow-inner border border-gray-700">
-            </div>
+        <div id="game-board" class="grid grid-cols-3 gap-4 sm:gap-6 mb-8 bg-gray-900 p-4 sm:p-6 rounded-2xl shadow-inner border border-gray-700">
+        </div>
 
-        <div id="message-box" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
-            <div class="bg-gray-800 p-8 md:p-12 rounded-3xl shadow-xl text-center w-full max-w-md border border-gray-700">
-                <h2 id="game-status" class="text-4xl font-bold mb-4 text-white">Game Over!</h2>
-                <p class="text-xl text-gray-400 mb-2">Your final score is <span id="final-score" class="font-bold text-yellow-400">0</span>.</p>
-                <p id="prize-message" class="text-xl font-bold text-green-400 mb-4 hidden">You won 20 credits!</p>
+        <div id="message-box" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden p-4">
+            <div class="bg-gray-800 p-6 md:p-8 rounded-3xl shadow-xl text-center w-full max-w-sm border border-gray-700">
+                <h2 id="game-status" class="text-3xl sm:text-4xl font-bold mb-4 text-white">Game Over!</h2>
+                <p class="text-lg sm:text-xl text-gray-400 mb-2">Your final score is <span id="final-score" class="font-bold text-yellow-400">0</span>.</p>
+                <p id="prize-message" class="text-lg sm:text-xl font-bold text-green-400 mb-4 hidden">You won 20 credits!</p>
                 <button id="restart-btn" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors shadow-lg mt-4">
                     Play Again
                 </button>
             </div>
         </div>
 
-        <button id="start-btn" class="bg-green-600 text-white font-bold py-4 px-12 rounded-full hover:bg-green-700 transition-colors shadow-lg text-lg mt-6">
+        <button id="start-btn" class="bg-green-600 text-white font-bold py-3 px-10 rounded-full hover:bg-green-700 transition-colors shadow-lg text-lg mt-6">
             Start Game
         </button>
     </div>
@@ -137,7 +136,7 @@
         let timerInterval;
 
         const numHoles = 9;
-        const gameSpeed = 500; // Moles now appear every 0.5 seconds
+        const gameSpeed = 500;
 
         // Generate holes and moles dynamically
         for (let i = 0; i < numHoles; i++) {
@@ -201,7 +200,6 @@
             moles.forEach(mole => mole.classList.remove('up'));
             finalScoreSpan.textContent = score;
             
-            // Winning condition logic
             if (score >= 20) {
                 prizeMessage.classList.remove('hidden');
                 document.getElementById('game-status').textContent = 'Congratulations!';
@@ -237,7 +235,6 @@
         restartBtn.addEventListener('click', startGame);
         gameBoard.addEventListener('click', hitMole);
 
-        // Initial setup for holes to prevent unwanted drag events
         moles.forEach(mole => {
              const parentHole = mole.parentElement;
              parentHole.addEventListener('dragstart', (e) => e.preventDefault());
